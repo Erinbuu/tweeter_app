@@ -1,20 +1,34 @@
-<!-- tweets/templates/base.html -->
-<html>
-  <head>
-    <title>Tweeter</title>
-  </head>
-  <body>
-    <header>
-      <div class="nav-left">
-        <h1><a href="{% url 'home' %}">Tweeter</a></h1>
-      </div>
-      <div class="nav-right">
-        <a href="{% url 'tweet_new' %}">Add Tweet</a>
-      </div>
-    </header>
+<!-- templates/base.html -->
+{% extends 'bootstrap.html' %}
 
-    <div>
-    {% block content %} {% endblock content %}
+{% load bootstrap4 %}
+
+{% block bootstrap4_content %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'home' %}">Tweeter</a>
+      <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tweet_new' %}">New Tweet</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container">
+
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+
+        {% block content %}(no content){% endblock %}
     </div>
-  </body>
-</html>
+
+{% endblock %}
