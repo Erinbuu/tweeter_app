@@ -29,8 +29,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Logins
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+BOOTSTRAP4 = { 'include_jquery': True }
+
+LOGIN_REDIRECT_URL = 'home' # new
+LOGOUT_REDIRECT_URL = 'home' # new
 
 
 # Application definition
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'bootstrap4', #new
     'users', #new
     'tweets', #new
+    'bootstrap_datepicker_plus', # new
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
