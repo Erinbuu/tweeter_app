@@ -12,14 +12,4 @@
     {% buttons submit='Ok' %}{% endbuttons %}
   </form>
 
-{% endblock content %}{% extends 'base.html' %}
-{% load bootstrap4 %}
-
-
-  <h4>Log In</h4>
-  <form method="post">{% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons submit='Ok' %}{% endbuttons %}
-  </form>
-
 {% endblock content %}
